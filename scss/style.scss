@@ -1,3 +1,6 @@
+@import "config";
+@import "utilities";
+@import "btnConfig";
 
 * {
   box-sizing: border-box;
@@ -13,21 +16,50 @@ body {
 
 img {
   border-radius: 50%;
+  width: 50%;
+  height: auto;
 }
 
 a {
   text-decoration: none;
 }
 
+
 .hero {
   // This is where the bulk of the SCSS styling needs to be done
-
   // Take a look at the other files we've built already. How can they be useful here?
-
   // Also, take time to review the features of SCSS we've already covered:
   // 1. $variables
   // 2. nesting (dont forget about the ampersand (&) parent selector!)
   // 3. At-Rules
+  .box{
+    background-color: $black-background;
+    @include set-bg($black-background);
+    nav{
+        font-size: x-small;
+        display: inline-flex;
+        margin-top: 10px;
+        .banner{
+            margin-right: 60px;
+        }
+        ul li{
+            display: inline-block;
+            margin-right: 20px;
+            a{
+                text-decoration: none;
+                @include set-bg($black-background)
+            }
+        }
+
+    }
+    .hero-content{
+        margin-top: 20px;
+        display: flex;
+        div{
+            margin-top: 80px;
+        }
+    }
+  }
 }
 
 // This code is related to some of the aspects of SCSS we have yet to cover.
